@@ -6,7 +6,7 @@ Study note for FE development
 3. JavaScript
 
 Use bootstrap:
-1) reference:  http://v3.bootcss.com/getting-started/#grunt
+1) reference:  http://v3.bootcss.com/getting-started/#grunt </br>
 Or import bootstrap and its dependency in html like below:
  <script src="scripts/jquery/jquery.min.js" /> </script>
 	<!--import bootstrap-->
