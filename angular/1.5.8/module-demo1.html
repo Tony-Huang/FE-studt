@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn"  >
+<head>
+    <meta charset="UTF-8">
+    <title>module demo</title>
+	
+	<script src="angular-1.5.8/angular.js" ></script>
+	<script src="js/modules/m2m3.js" ></script>
+	<script src="js/modules/m1.js" ></script>
+</head>
+
+
+<body>
+
+<h3>   hi.    </h3>
+
+ <!--- Not Allowed here!! one page only have 1 ng-app 
+  <div ng-app="m2">
+      <div ng-controller="m2ctrl1 as ctrl1">
+      </div>
+	  
+	  <div ng-controller="m2ctrl2 as ctrl2">
+      </div>
+  </div>
+  -->
+  
+  <div ng-app="m3">
+      <div ng-controller="mainCtrl as ctrl">
+        <span>  var : </span>  <span ng-bind="ctrl.name"></span>
+   
+        <div>
+          hi, {{ctrl.name}}
+        </div>
+      </div>
+  </div>
+  
+     
+
+
+</body>
+</html>
