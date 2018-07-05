@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <script src="lib/vue.js"></script>
+  <script src="lib/axios.js"></script>
+</head>
+<body>
+  
+
+
+  <div>
+    <image src="static/img/boy.png" 
+	  width="30"
+         height="41"
+         title="boy"
+	
+	/>
+  </div>
+  <div>
+    <image src="static/img/girl.png" 
+	  width="30" height="41" title="girl"
+	/>
+  </div>
+  <div>
+    <image src="static/img/boygirl.png" 
+	  width="40" height="51"   title="boygirl"
+	
+	/>
+  </div>
+  
+   <div id="app-hello">
+    
+     <input v-model="name" size="60">
+	 <br/>
+	  <p>{{name }}</p>
+   </div>
+
+
+   <div id="app-smartwc">
+     <p>{{url }}</p>
+     <input v-model="url" size="60">
+	 
+	 <button v-on:click="fetchData">get data</button>
+	 <br/>
+	 response:  {{result}}
+   </div>
+   
+   
+   <hr>
+   
+   
+   
+   <video controls width="600" height="600"
+       autoplay loop muted
+      >
+      <source src="static/video/test.mp4" type="video/mp4">
+      
+       <p>Your browser doesn't support HTML5 video. </p>
+   </video>
+   
+   
+
+  <script>
+  
+     var app1 = new Vue({
+      el: '#app-hello',
+      data: {
+        name: 'Hello Vue!'
+      }
+     });
+
+  
+
+     var app = new Vue({
+      el: '#app-smartwc',
+      data: {
+        url: 'http://192.168.0.150:9001/smartwc/cubicle/sum', 
+		result : ''
+      },
+	  
+	  methods: {
+	     fetchData: function (){
+		   console.log("to fetch data, url= "+this.url);
+		   self=this;
+		   
+		   //use axios 
+		   axios.get(this.url)
+             .then(response => {
+               // JSON responses are automatically parsed.
+               self.result = response.data
+            })
+           .catch(e => {
+               console.log(e)
+            })
+		   
+		   //axios end.
+		 }
+	   }
+    });
+
+	
+	
+  </script>
+  
+  
+  
+</body>
+</html>
