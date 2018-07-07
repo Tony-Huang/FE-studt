@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Hyperlink </title>
+</head>
+<body>
+    <h1> Some example to show using hyperlink to submit. </h1>
+	<p> 可以点击链接的方式提交表单或打开新窗口，以下是一些例子. </p>
+	<img src='../common-imgs/bridge.jpg'/>
+	  <ul>
+	  <li>   
+         <div>	  1. href = "#" . window.open('url')打开新窗口 </div>
+		 <a href="#" onclick=" window.open('http://wwww.baidu.com');return false;"> Exampel </a>
+		 
+	  </li>
+	  
+	  <li>
+	   <div>   
+		   <div>  2. href = "#" . js提交表单，载入新内容(仍在本窗口) </div>
+		   <form id="form1"  name="myform1"  method="GET"  action="http://www.baidu.com">  
+		    <input  type="hidden"  name="k1" value="v1" />
+			<input   type="hidden" name="k2" value="v2" />
+		   
+		    <a href="#" onclick=" myform1.submit();return false;"> Exampel2 </a>
+		   
+		   </form>
+		    
+		 </div>
+	  </li>
+	  
+	  <li>
+	   <div>   
+		   <div>	  3. action = "#" . js提交GET表单，回到本页面顶端 </div>
+		   <form id="form2"  name="myform2"  method="GET"  action="#">  
+		    <input  type="hidden"  name="k1" value="v1" />
+			<input   type="hidden" name="k2" value="v2" />
+		   
+		    <a href="#" onclick=" myform2.submit();return true"> Exampel3 </a>
+		   
+		   </form>
+		    
+		 </div>
+	  </li>
+	  
+	  
+	  <li>
+	   <div>   
+		   <div>	  4. action = "#" . js提交POST表单，回到本页面顶端 </div>
+		   <form id="form2"  name="myform2"  method="POST"  action="https://www.baidu.com">  
+		    <input  type="hidden"  name="k1" value="v1" />
+			<input   type="hidden" name="k2" value="v2" />
+		   
+		    <a href="#" onclick="goExternalLink(this.parentNode)"> Exampel4 </a>
+		   
+		   </form>
+		    
+		 </div>
+	  </li>
+	
+	
+	
+ 
+      </ul>
+	  
+	   <script>
+	   
+	      function   goExternalLink( form ) {
+			form.submit();
+			return true;
+		  }
+	  
+	  
+	  </script>
+	  
+</body>
+</html>
