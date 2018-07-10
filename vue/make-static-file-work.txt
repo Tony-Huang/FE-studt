@@ -1,0 +1,1 @@
+in config/index.js change the original value of build.assetsPublicPath as './'
